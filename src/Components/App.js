@@ -1,6 +1,6 @@
 import React from 'react';
 import { gql } from "apollo-boost";
-import { useQuery } from 'react-apollo-hooks';
+import { useQuery } from 'react-apollo-hooks';  // 쿼리수행을 위한 훅스
 import GlobalStyles from '../Styles/GlobalStyles';
 import styled, { ThemeProvider } from 'styled-components';
 import Theme from '../Styles/Theme';
