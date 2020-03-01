@@ -1,10 +1,12 @@
 import React from 'react';
 import { gql } from "apollo-boost";
 import { useQuery } from 'react-apollo-hooks';  // 쿼리수행을 위한 훅스
-import GlobalStyles from '../Styles/GlobalStyles';
 import styled, { ThemeProvider } from 'styled-components';
+import { ToastContainer, toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
+import GlobalStyles from '../Styles/GlobalStyles';
 import Theme from '../Styles/Theme';
-import Router from './Router';
+import AppRouter from './Router';
 import Footer from './Footer';
 
 const QUERY = gql`
@@ -22,13 +24,14 @@ const Wrapper = styled.div`
 export default () => {
   
   const { data: {isLoggedIn} } = useQuery(QUERY);
-  console.log("isLoggedIn:",isLoggedIn);
+  
   return (
     <ThemeProvider theme={Theme}>
       <Wrapper>
         <GlobalStyles />
-          <Router isLoggedIn={isLoggedIn} />
+        <AppRouter isLoggedIn={isLoggedIn} />
         <Footer />
+        <ToastContainer position={toast.POSITION.BOTTOM_CENTER} />
       </Wrapper>
     </ThemeProvider>
   );
