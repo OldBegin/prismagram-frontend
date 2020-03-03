@@ -25,7 +25,7 @@ const Link = styled.span`
     cursor: pointer;
 `;
 const Title = styled.div`
-    botom-margin: 5px;
+    margin-bottom: 5px;
     padding: 10px;
 `;
 const Form = styled(Box)`

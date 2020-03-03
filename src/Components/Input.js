@@ -12,7 +12,7 @@ const Container = styled.input`
 `;
 
 
-const Input = ({ placeholder, required = true, value="", onChange, type="text", autoComplete=""}) => (
+const Input = ({ placeholder, required = true, value="", onChange, type="text", autoComplete="", className }) => (
     <Container 
         placeholder={placeholder} 
         required={required} 
@@ -20,6 +20,7 @@ const Input = ({ placeholder, required = true, value="", onChange, type="text", 
         onChange = {onChange}
         type = {type}
         autoComplete = {autoComplete}
+        className={className}
     />
 )
 
