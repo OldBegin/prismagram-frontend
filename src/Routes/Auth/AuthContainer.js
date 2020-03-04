@@ -27,12 +27,11 @@ export default () => {
                                                 password: password.value
                                             }
                                 });
-    
-    const _onLogin = (e) => {
+    const _onLogin = async (e) => {
         e.preventDefault();
         if(email !== "" && password){
             try{       
-                requestToken().then(({data}) => {
+                await requestToken().then(({data}) => {
                     const { requestToken: token } = data;
                     token 
                         ? logIn({ variables: { token } })

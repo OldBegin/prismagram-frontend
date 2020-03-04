@@ -19,7 +19,7 @@ const HeaderStyle = styled.header`
   margin-bottom: 32px;
 `;
 
-const Wrapper = styled.div`
+const HeaderWrapper = styled.div`
   width: 100%;
   max-width: ${props => props.theme.maxWidth};
   display:flex;
@@ -49,7 +49,6 @@ const SearchInput = styled(Input)`
     opacity: 0.8;
     font-weight: 200;
   }
-
 `;
 
 const HeaderLink = styled(Link)`
@@ -64,10 +63,10 @@ const Header = ({history}) => {
     e.preventDefault();
     history.push(`/search?term=${value}`);
   }
-
+  console.log(':::history:::',history)
   return (
     <HeaderStyle>
-      <Wrapper>
+      <HeaderWrapper>
         <HeaderColumn>
           <HeaderLink to="/">
             <Camera/>
@@ -95,10 +94,9 @@ const Header = ({history}) => {
             <User/>
           </HeaderLink>
         </HeaderColumn>
-      </Wrapper>
+      </HeaderWrapper>
     </HeaderStyle>
  
   );
 }
-
 export default withRouter(Header);

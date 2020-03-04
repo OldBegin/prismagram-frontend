@@ -3,14 +3,12 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import Auth from "../Routes/Auth";
 import Feed from "../Routes/Feed";
 import Explore from '../Routes/Explore';
 import Profile from '../Routes/Profile';
 import Search from '../Routes/Search';
-
-//import { useEffect } from "react";
 
 const LoggedInRoutes = () => (
     <Switch>
@@ -25,14 +23,12 @@ const LoggedOutRoutes = () => (
         <Route exact path="/" component={Auth} />
     </Switch>
 );
-
 const AppRouter = ({ isLoggedIn }) =>{
     return ( isLoggedIn 
                 ? <LoggedInRoutes /> 
                 : <LoggedOutRoutes /> 
-    )
+    );
 }
-
 AppRouter.propTypes = {
     isLoggedIn: PropTypes.bool.isRequired
 };

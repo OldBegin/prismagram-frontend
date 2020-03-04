@@ -26,14 +26,13 @@ const Wrapper = styled.div`
 export default () => {
   
   const { data: {isLoggedIn} } = useQuery(QUERY);
-  
   return (
     <ThemeProvider theme={Theme}>
       <>
         <GlobalStyles />
         <Router>
           <>
-            <Header />
+            <Header/>
             <Wrapper>
               <AppRouter isLoggedIn={isLoggedIn} />
               <Footer />
